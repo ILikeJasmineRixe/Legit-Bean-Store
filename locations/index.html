@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Legit Bean Store </title>
+    <link rel="stylesheet" type="text/css" href="/assets/stylesheet/update-log.css">
+    <link rel="icon" href="/assets/images/bean-individual-icon.webp">
+
+    <!-- META Tags for better results on search engines / search queries-->
+    <meta name="description"
+        content="Legit Bean Store, the world's leading parody provider of all things beans. From individual beans to bean cannons, we pride ourselves on our wide variety of bean products.">
+    <meta name="author" content="ILikeJasmineRice">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name=”robots” content="index, follow">
+    <!-- Open Graph Protocol for better results on social media -->
+    <meta property="og:title" content="Legit Bean Store">
+    <meta property="og:description"
+        content="Legit Bean Store, the world's leading parody provider of all things beans. From individual beans to bean cannons, we pride ourselves on our wide variety of bean products.">
+    <meta property="og:image" content="/assets/images/bean-individual-icon.webp">
+    <meta property="og:url" content="https://legitbeanstore.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Legit Bean Store">
+    <meta property="og:locale" content="en_US">
+</head>
+
+<body>
+    <div id="notification"></div>
+
+    <button id="chat-button" class="chat-button"></button>
+    <div id="chat-widget">
+        <button id="close-button">&times;</button> <!-- Moved close button inside chat widget -->
+        <div id="messages"></div>
+        <div class="typing" id="typing">AI is typing</div>
+        <div id="chat-controls">
+            <input id="input-message" type="text" placeholder="Type your message here...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+
+    <header>
+        <h1><img id="headerBean" src="/assets/images/bean-individual-icon.webp">Legit Bean Store</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/products/">Products</a>
+            <a href="/cart/">Cart</a>
+            <a href="/update-log/">Update Log</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe9gbQSXh0VgL5nabDvlynvJ8mdufkbSP0LcUdSZ9yGqoFwiA/viewform?usp=sf_link"
+                target="_blank">Feedback</a>
+            <a href="/locations/"><em>Locations</em></a>
+        </nav>
+    </header>
+    <main>
+        <h1>Our Locations</h1>
+        <div>
+            <h3>210 Moose St, Jackson, WY 83001</h3>
+        </div>
+    </main>
+    <br>
+    <br>
+    <br>
+    <br>
+    <footer><em>
+            Disclaimer: Legit Bean Store is a parody website intended for humor. We do not sell real products, and no
+            transactions or payments are processed on this site.
+            Any reference to products or services is purely fictional. We are not responsible for any expectations or
+            misunderstandings.
+            No beans will be delivered. This website is for entertainment purposes only.
+            Additionally, it's important to note that while I may use other people's bean pictures as bases before
+            editing, my parody and edits are conducted in compliance with fair use principles.
+            If original creators would like a product taken down due to their content being used without permission,
+            please <a href="mailto:ilikejasminerice@gmail.com" style="color: inherit;">contact us</a>.
+            Content veracity not implied
+        </em></footer>
+    <script src="/assets/scripts/chatbot.js"></script>
+    <script>
+        // footer fix
+        document.addEventListener("scroll", () => {
+            const footer = document.querySelector("footer");
+            const bodyHeight = document.body.scrollHeight;
+            const viewportHeight = window.innerHeight;
+            const scrollY = window.scrollY;
+
+            if (scrollY + viewportHeight >= bodyHeight) {
+                footer.style.position = "relative";
+            } else {
+                footer.style.position = "fixed";
+            }
+        });
+
+    </script>
+</body>
+
+</html>

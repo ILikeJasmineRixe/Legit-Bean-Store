@@ -1,0 +1,8 @@
+# Ignore Ads.txt file
+Ads.txt
+
+# Ignore sensitive files
+secretpassword.txt
+db.resolved.json
+theOne.zip
+items.txt

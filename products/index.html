@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Legit Bean Store </title>
+  <link rel="stylesheet" type="text/css" href="/assets/stylesheet/products.css">
+  <link rel="icon" href="/assets/images/bean-individual-icon.webp">
+
+  <!-- META Tags for better results on search engines / search queries-->
+  <meta name="description"
+    content="Legit Bean Store, the world's leading parody provider of all things beans. From individual beans to bean cannons, we pride ourselves on our wide variety of bean products.">
+  <meta name="author" content="ILikeJasmineRice">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name=”robots” content="index, follow">
+  <!-- Open Graph Protocol for better results on social media -->
+  <meta property="og:title" content="Legit Bean Store">
+  <meta property="og:description"
+    content="Legit Bean Store, the world's leading parody provider of all things beans. From individual beans to bean cannons, we pride ourselves on our wide variety of bean products.">
+  <meta property="og:image" content="/assets/images/bean-individual-icon.webp">
+  <meta property="og:url" content="https://legitbeanstore.com">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Legit Bean Store">
+  <meta property="og:locale" content="en_US">
+</head>
+
+<body>
+  <div id="notification"></div>
+
+  <button id="chat-button" class="chat-button"></button>
+  <div id="chat-widget">
+    <button id="close-button">&times;</button> <!-- Moved close button inside chat widget -->
+    <div id="messages"></div>
+    <div class="typing" id="typing">AI is typing</div>
+    <div id="chat-controls">
+      <input id="input-message" type="text" placeholder="Type your message here...">
+      <button id="send-button">Send</button>
+    </div>
+  </div>
+
+  <header>
+
+    <h1><img id="headerBean" src="/assets/images/bean-individual-icon.webp">Legit Bean Store</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/products/"><em>Products</em></a>
+      <a href="/cart/">Cart</a>
+      <a href="/update-log/">Update Log</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe9gbQSXh0VgL5nabDvlynvJ8mdufkbSP0LcUdSZ9yGqoFwiA/viewform?usp=sf_link"
+        target="_blank">Feedback</a>
+      <a href="/locations/">Locations</a>
+    </nav>
+
+  </header>
+  <main>
+
+    <h1 id="consumableBeans">Consumable Beans</h1>
+    <ul id="productList" class="product-list">
+
+      <!-- #1 Individual Bean -->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/bean-individual.webp" alt="Bean 1">
+          <h3>Individual Bean</h3>
+          <p>One Scrumptious Kidney Bean</p>
+          <div class="product-details">
+            <p>$1.99</p>
+            <div class="product-actions">
+              <input id="quantityBean1" type="number" min="0" max="100" value="1">
+              <button
+                onclick="addToCart('Individual Bean', 1.99, '/assets/images/bean-individual.webp', 'quantityBean1')">Add
+                to Bean
+                Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+
+      <!-- #2 Canned beans -->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/bean-canned.webp" alt="Bean 2">
+          <h3>Canned Beans</h3>
+          <p>One Scrumptious Can of Kidney Beans</p>
+          <div class="product-details">
+            <p>$3.99</p>
+            <div class="product-actions">
+              <input id="quantityBean2" type="number" min="0" max="100" value="1">
+              <button onclick="addToCart('Canned Beans', 3.99, '/assets/images/bean-canned.webp', 'quantityBean2')">Add
+                to Bean Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+
+      <!-- #3 Bagged Beans -->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/bean-bagged.webp" alt="Bean 3">
+          <h3>Bagged Beans</h3>
+          <p>One Scrumptious Bag of White Beans</p>
+          <div class="product-details">
+            <p>$2.49</p>
+            <div class="product-actions">
+              <input id="quantityBean3" type="number" min="0" max="100" value="1">
+              <button onclick="addToCart('Bagged Beans', 2.49, '/assets/images/bean-bagged.webp', 'quantityBean3')">Add
+                to Bean Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+
+      <!-- #4 Bean Juice -->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/bean-juice.webp" alt="Bean Juice">
+          <h3>Bean Juice (3 Liters)</h3>
+          <p>One Scrumptious 3 Liter Cup of Black Bean Juice</p>
+          <div class="product-details">
+            <p>$49.99</p>
+            <div class="product-actions">
+              <input id="quantityBean4" type="number" min="0" max="100" value="1">
+              <button
+                onclick="addToCart('Bean Juice &lpar;3 Liters&rpar;', 49.99, '/assets/images/bean-juice.webp', 'quantityBean4')">Add
+                to
+                Bean Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+
+      <!-- #5 Beans on Toast -->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/bean-toast.webp" alt="Bean Toast">
+          <h3>Bean Toast</h3>
+          <p>One Scrumptious Plate of Bread + Kidney beans</p>
+          <div class="product-details">
+            <p>$6.50</p>
+            <div class="product-actions">
+              <input id="quantityBean5" type="number" min="0" max="100" value="1">
+              <button onclick="addToCart('Bean Toast', 6.50, '/assets/images/bean-toast.webp', 'quantityBean5')">Add to
+                Bean
+                Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+
+      <!-- #6 Bean Package -->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/bean-package.webp" alt="1 of each product">
+          <h3>Bean Package</h3>
+          <p>One Scrumptious Pack of 1 of Everything</p>
+          <div class="product-details">
+            <p>$12</p>
+            <div class="product-actions">
+              <input id="quantityBean6" type="number" min="0" max="100" value="1">
+              <button onclick="addToCart('Bean Package', 12, '/assets/images/bean-package.webp', 'quantityBean6')">Add
+                to Bean
+                Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- #18 Bean Burger-->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/bean-burger.webp" alt="Bean Burger">
+          <h3>Bean Burger</h3>
+          <p>One Delicious burger with our signature Big Bean Patty</p>
+          <div class="product-details">
+            <p>$9</p>
+            <div class="product-actions">
+              <input id="quantityBean18" type="number" min="0" max="1200" value="1">
+              <button onclick="addToCart('Bean Burger', 9, '/assets/images/bean-burger.webp', 'quantityBean18')">Add
+                to Bean
+                Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- #26 Beans To-Go! -->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/beans-to-go.webp" alt="Beans To-Go">
+          <h3>Beans To-Go!</h3>
+          <p>Travel Size Pack of Miniature Beans.</p>
+          <div class="product-details">
+            <p>$1.50</p>
+            <div class="product-actions">
+              <input id="quantityBean27" type="number" min="0" max="1200" value="1">
+              <button onclick="addToCart('Beans To-Go!', 1.50, '/assets/images/beans-to-go.webp', 'quantityBean27')">Add
+                to Bean
+                Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+
+    <h1 id="miscellaneousBeans">Miscellaneous Beans</h1>
+    <ul id="productList" class="product-list">
+
+      <!-- #7 Bean Membership -->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/bean-membership.webp" alt="Bean Membership">
+          <h3>Bean Membership</h3>
+          <p>One Scrumptious Membership for free beans</p>
+          <div class="product-details">
+            <p>$5<span style="font-size: 3px;">(Renews at $450 Per Year)</span></p>
+            <div class="product-actions">
+              <input id="quantityBean7" type="number" min="0" max="1" value="1">
+              <button
+                onclick="addToCart('Bean Membership', 5, '/assets/images/bean-membership.webp', 'quantityBean7')">Add to
+                Bean
+                Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- #8 Bean Artwork -->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/bean-artwork.webp" alt="Bean Artwork">
+          <h3>Bean Artwork</h3>
+          <p>One Beautiful 12ft x 12ft artwork about beans</p>
+          <div class="product-details">
+            <p>$64.99</p>
+            <div class="product-actions">
+              <input id="quantityBean8" type="number" min="0" max="10" value="1">
+              <button
+                onclick="addToCart('Bean Artwork', 64.99, '/assets/images/bean-artwork.webp', 'quantityBean8')">Add to
+                Bean
+                Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+
+
+
+      <!-- #12 Bean Cannon-->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/bean-cannon.webp" alt="Bean Cannon">
+          <h3>Bean Cannon</h3>
+          <p>One big metal cannon + 50 pounds of beans</p>
+          <div class="product-details">
+            <p>$250</p>
+            <div class="product-actions">
+              <input id="quantityBean12" type="number" min="0" max="25" value="1">
+              <button onclick="addToCart('Bean Cannon', 250, '/assets/images/bean-cannon.webp', 'quantityBean12')">Add
+                to Bean
+                Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- #13 SPECIALTY BEANS -->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/bean-specialty.webp" alt="Specialty Bean">
+          <h3>Specialty Bean</h3>
+          <p>The one and only... <em>Specialty Bean.</em></p>
+          <div class="product-details">
+            <p>$3,000</p>
+            <div class="product-actions">
+              <input id="quantityBean13" type="number" min="0" max="25" value="1">
+              <button
+                onclick="addToCart('Specialty Bean', 3000, '/assets/images/bean-specialty.webp', 'quantityBean13')">Add
+                to
+                Bean
+                Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- #16 Techno Bean -->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/bean-techy.webp" alt="Techno Bean">
+          <h3>Techno Bean</h3>
+          <p>An Individual Bean... but with a CPU and lots of wires</p>
+          <div class="product-details">
+            <p>$75.50
+            <p>
+            <div class="product-actions">
+              <input id="quantityBean16" type="number" min="0" max="100" value="1">
+              <button onclick="addToCart('Techno Bean', 75.5, '/assets/images/bean-techy.webp', 'quantityBean16')">Add
+                to
+                Bean
+                Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- #14 Bean Flag -->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/bean-flag.webp" alt="Bean Flag">
+          <h3>Bean Flag</h3>
+          <p>Bean Flag that waves and is woven out of beans</p>
+          <div class="product-details">
+            <p>$110</p>
+            <div class="product-actions">
+              <input id="quantityBean14" type="number" min="0" max="25" value="1">
+              <button onclick="addToCart('Bean Flag', 110, '/assets/images/bean-flag.webp', 'quantityBean14')">Add to
+                Bean
+                Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- #19 Beangle -->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/beangle.webp" alt="Bean Dog (Beagle)">
+          <h3>Beangle</h3>
+          <p>Genetic Hybrid of Dog and Bean.</p>
+          <div class="product-details">
+            <p>$50,000</p>
+            <div class="product-actions">
+              <input id="quantityBean19" type="number" min="0" max="1" value="1">
+              <button onclick="addToCart('Beangle', 50000, '/assets/images/beangle.webp', 'quantityBean19')">Add to
+                Bean
+                Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- #24 Bean-Shaped Pancake Molds -->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/bean-pancake-molds.webp" alt="Bean-Shaped Pancake Molds">
+          <h3>Bean-Shaped Pancake Molds</h3>
+          <p>Make bean pancakes!</p>
+          <div class="product-details">
+            <p>$4.99</p>
+            <div class="product-actions">
+              <input id="quantityBean24" type="number" min="0" max="1" value="1">
+              <button
+                onclick="addToCart('Bean-Shaped Pancake Molds', 4.99, '/assets/images/bean-pancake-molds.webp', 'quantityBean24')">Add
+                to
+                Bean
+                Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- #25 Bean-flavored Toothpicks -->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/bean-flavored-toothpicks.webp" alt="Bean-flavored Toothpicks">
+          <h3>Bean-flavored Toothpicks</h3>
+          <p>Stuck in your teeth? Taste the bean!</p>
+          <div class="product-details">
+            <p>$3</p>
+            <div class="product-actions">
+              <input id="quantityBean25" type="number" min="0" max="1" value="1">
+              <button
+                onclick="addToCart('Bean-flavored Toothpicks', 3, '/assets/images/bean-flavored-toothpicks.webp', 'quantityBean25')">Add
+                to
+                Bean
+                Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- #27 Carbon-Fiber Bean -->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/bean-carbon-fiber.webp" alt="Carbon Fiber Bean">
+          <h3>Carbon Fiber Bean</h3>
+          <p>Strong bean. But It's Extra Durable.</p>
+          <div class="product-details">
+            <p>$45</p>
+            <div class="product-actions">
+              <input id="quantityBean27" type="number" min="0" max="1" value="1">
+              <button
+                onclick="addToCart('Carbon FIber Bean', 45, '/assets/images/bean-carbon-fiber.webp', 'quantityBean27')">Add
+                to
+                Bean
+                Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- #28 Deutsche Bohne -->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/bean-deutsch.webp" alt="Deutsche Bohne">
+          <h3>Deutsche Bohne</h3>
+          <p>Deutsche Bohne, mit einem Döner Kebab</p>
+          <div class="product-details">
+            <p>$12</p>
+            <div class="product-actions">
+              <input id="quantityBean28" type="number" min="0" max="1" value="1">
+              <button
+                onclick="addToCart('Deutsche Bohne', 12, '/assets/images/bean-deutsch.webp', 'quantityBean28')">Add to
+                Bean
+                Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+
+    <h1 id="beanMerch">Bean Merch</h1>
+    <ul id="productList" class="product-list">
+
+
+      <!-- #9 Bean Shirt -->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/bean-merch.webp" alt="Bean Shirt">
+          <h3>Bean Shirt</h3>
+          <p>One Beautiful Bean-based Torso Cloth (Large)</p>
+          <div class="product-details">
+            <p>$15</p>
+            <div class="product-actions">
+              <input id="quantityBean9" type="number" min="0" max="100" value="1">
+              <button onclick="addToCart('Bean Shirt', 15, '/assets/images/bean-merch.webp', 'quantityBean9')">Add to
+                Bean
+                Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- #10 Bean Pants -->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/bean-merch-2.webp" alt="Bean Pants">
+          <h3>Bean Pants</h3>
+          <p>One Beautiful Bean-based Leg Cloth (Large)</p>
+          <div class="product-details">
+            <p>$11</p>
+            <div class="product-actions">
+              <input id="quantityBean10" type="number" min="0" max="100" value="1">
+              <button onclick="addToCart('Bean Pants', 11, '/assets/images/bean-merch-2.webp', 'quantityBean10')">Add to
+                Bean
+                Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- #11 Bean Boxers -->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/bean-boxers.webp" alt="Bean Boxers">
+          <h3>Bean Boxers</h3>
+          <p>One Beautiful Bean-Based Butt Cloth (Large)</p>
+          <div class="product-details">
+            <p>$12</p>
+            <div class="product-actions">
+              <input id="quantityBean11" type="number" min="0" max="25" value="1">
+              <button onclick="addToCart('Bean Boxers', 12, '/assets/images/bean-boxers.webp', 'quantityBean11')">Add to
+                Bean
+                Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- #15 Bean Shoes-->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/bean-shoes.webp" alt="Bean Shoes">
+          <h3>Bean Shoe Ones</h3>
+          <p>One Beautiful Pair of the new Bean Shoe Ones</p>
+          <div class="product-details">
+            <p>$29.99</p>
+            <div class="product-actions">
+              <input id="quantityBean15" type="number" min="0" max="25" value="1">
+              <button
+                onclick="addToCart('Bean Shoe Ones', 29.99, '/assets/images/bean-shoes.webp', 'quantityBean15')">Add to
+                Bean
+                Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- #17 Bean plush #1 -->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/bean-timothy-3rd-plushie.webp" alt="Timothy the Bean the 3rd Plushie">
+          <h3>Timothy Plushie</h3>
+          <p>Super soft plushie of our mascot, woven out of beans</p>
+          <div class="product-details">
+            <p>$14.99</p>
+            <div class="product-actions">
+              <input id="quantityBean17" type="number" min="0" max="25" value="1">
+              <button
+                onclick="addToCart('Timothy the Bean the 3rd Plushies', 14.99, '/assets/images/bean-timothy-3rd-plushie.webp', 'quantityBean17')">Add
+                to
+                Bean
+                Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- #20 Bean Sunglasses -->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/bean-sunglasses.webp" alt="Bean Sunglasses">
+          <h3>Bean Sunglasses</h3>
+          <p>A pair of sunglasses, so you can better see beans</p>
+          <div class="product-details">
+            <p>$4</p>
+            <div class="product-actions">
+              <input id="quantityBean20" type="number" min="0" max="400" value="1">
+              <button
+                onclick="addToCart('Bean Sunglasses', 4, '/assets/images/bean-sunglasses.webp', 'quantityBean20')">Add
+                to
+                Bean
+                Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- #21 Bean Beanie -->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/Beanieeee.webp" alt="Beanie">
+          <h3><em>Bean</em>ie</h3>
+          <p>A beanie made of beans, which makes it a beanie.</p>
+          <div class="product-details">
+            <p>$7</p>
+            <div class="product-actions">
+              <input id="quantityBean21" type="number" min="0" max="400" value="1">
+              <button onclick="addToCart('Beanie', 7, '/assets/images/Beanieeee.webp', 'quantityBean21')">Add to
+                Bean
+                Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- #22 Bean Jacket -->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/beanJacket.webp" alt="Bean Jacket">
+          <h3>Bean Jacket</h3>
+          <p>Very stylish jacket woven from thick bean</p>
+          <div class="product-details">
+            <p>$60</p>
+            <div class="product-actions">
+              <input id="quantityBean22" type="number" min="0" max="400" value="1">
+              <button onclick="addToCart('Bean Jacket', 60, '/assets/images/beanJacket.webp', 'quantityBean22')">Add to
+                Bean
+                Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- #23 Bean Umbrella -->
+      <li>
+        <div class="product-item">
+          <img src="/assets/images/bean-umbrella.webp" alt="Bean Umbrella">
+          <h3>Bean Umbrella</h3>
+          <p>To keep you dry in a bean-shaped rainstorm</p>
+          <div class="product-details">
+            <p>$24</p>
+            <div class="product-actions">
+              <input id="quantityBean23" type="number" min="0" max="400" value="1">
+              <button
+                onclick="addToCart('Bean Umbrella', 24, '/assets/images/bean-umbrella.webp', 'quantityBean23')">Add to
+                Bean
+                Cart</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+
+  </main>
+  <br>
+  <br>
+  <br>
+  <br>
+  <footer><em>
+      Disclaimer: Legit Bean Store is a parody website intended for humor. We do not sell real products, and no
+      transactions or payments are processed on this site.
+      Any reference to products or services is purely fictional. We are not responsible for any expectations or
+      misunderstandings.
+      No beans will be delivered. This website is for entertainment purposes only.
+      Additionally, it's important to note that while I may use other people's bean pictures as bases before editing, my
+      parody and edits are conducted in compliance with fair use principles.
+      If original creators would like a product taken down due to their content being used without permission, please <a
+        href="mailto:ilikejasminerice@gmail.com" style="color: inherit;">contact us</a>.
+      Content veracity not implied
+    </em></footer>
+  <script src="/assets/scripts/script.js"></script>
+  <script src="/assets/scripts/chatbot.js"></script>
+  <script>
+    // footer fix
+    document.addEventListener("scroll", () => {
+      const footer = document.querySelector("footer");
+      const bodyHeight = document.body.scrollHeight;
+      const viewportHeight = window.innerHeight;
+      const scrollY = window.scrollY;
+
+      if (scrollY + viewportHeight >= bodyHeight) {
+        footer.style.position = "relative";
+      } else {
+        footer.style.position = "fixed";
+      }
+    });
+
+  </script>
+</body>
+
+</html>
