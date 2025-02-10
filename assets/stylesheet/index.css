@@ -431,3 +431,12 @@ section > img {
   #channelAnchor:hover {
     text-decoration: underline;
   }
+
+  #githubAnchor {
+    color: rgb(53, 53, 53);
+    text-decoration: none;
+  }
+
+  #githubAnchor:hover {
+    text-decoration: underline;
+  }
