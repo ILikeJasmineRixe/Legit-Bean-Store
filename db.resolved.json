@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "env": {
+    "vars": {}
+  },
+  "libdefs": {
+    "warnings": [],
+    "libs": {},
+    "unresolved": {
+      "libs": [],
+      "includes": [],
+      "vars": []
+    }
+  }
+}

@@ -2,7 +2,7 @@
 Ads.txt
 
 # Ignore sensitive files
-secretpassword.txt
-db.resolved.json
-theOne.zip
-items.txt
+extra/secretpassword.txt
+extra/db.resolved.json
+extra/theOne.zip
+extra/items.txt
