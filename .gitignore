@@ -1,7 +1,5 @@
-# Ignore Ads.txt file
+/bean-chatbot/
 Ads.txt
-
-# Ignore sensitive files
 extra/secretpassword.txt
 extra/db.resolved.json
 extra/theOne.zip

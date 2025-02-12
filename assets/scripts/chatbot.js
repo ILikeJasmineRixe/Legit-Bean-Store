@@ -53,7 +53,6 @@ function sendMessage() {
         { word: 'bean extravaganza', probability: 0.03 },
         { word: 'ultra bean', probability: 0.2 },
         { word: 'bean drugs', probability: 0.0003 },
-        { word: '', probability: }
     ];
     
 

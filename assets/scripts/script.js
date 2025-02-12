@@ -134,8 +134,10 @@ function changeEmptyCartText() {
   beanCartButton = document.getElementById('beanCartButton');
   totalPrice = document.getElementById('totalPrice');
   const randomDay = Math.floor(Math.random() * 364) + 1;
+  console.log(randomDay);
   const deliveryDate = new Date(Date.now() + randomDay * 24 * 60 * 60 * 1000).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-  emptyCartMessage.textContent = 'Thank you for your purchase! Your new beans will be delivered', deliveryDate + '*'
+  console.log(deliveryDate);
+  emptyCartMessage.textContent = `Thank you for your purchase! Your new beans will be delivered on ${deliveryDate}*`
 
   emptyCartMessage.style.fontSize = '2rem';
   emptyCartMessage.style.fontWeight = 'bold';
