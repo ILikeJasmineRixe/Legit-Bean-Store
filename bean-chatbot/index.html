@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chat with AI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 10px;
+            background-color: #f5f5f5;
+        }
+
+        #chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: rgb(199, 128, 81);
+            border: none;
+            cursor: pointer;
+            z-index: 100;
+            border: 2px solid black;
+        }
+
+        .chat-button {
+            background-image: url('bean-individual-icon.webp');
+            background-size: 90%;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 50%;
+        }
+
+        #chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 400px;
+            height: 500px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            z-index: 99;
+            display: none;
+        }
+
+        #chat-controls {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+
+        #send-button {
+            height: 46px;
+            padding: 5px;
+            width: 20%;
+            font-size: 16px;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .typing {
+            position: absolute;
+            bottom: 80px;
+            color: #888;
+            font-style: italic;
+            display: none;
+        }
+
+        #messages {
+            height: 400px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 10px;
+            overflow-y: scroll;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        #input-message {
+            width: 75%;
+            height: 40px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        #close-button {
+            position: absolute;
+            bottom: 480px;
+            right: -10px;
+            z-index: 101;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 30px;
+            color: #ccc;
+            margin: 10px;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        p:nth-child(even) {
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        p:nth-child(odd) {
+            background-color: #ddd;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Custom scrollbar styles */
+        #messages::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        #messages::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        #messages::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        #messages::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <!-- Chat button with a class 'chat-button' -->
+    <button id="chat-button" class="chat-button"></button>
+
+    <!-- Chat widget -->
+    <div id="chat-widget">
+        <button id="close-button">&times;</button> <!-- Moved close button inside chat widget -->
+        <div id="messages"></div>
+        <div class="typing" id="typing">AI is typing</div>
+        <div id="chat-controls">
+            <input id="input-message" type="text" placeholder="Type your message here...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('chat-widget').style.display = 'none';
+        document.getElementById('chat-button').style.display = 'block';
+
+        document.getElementById('chat-button').addEventListener('click', function () {
+            var chatWidget = document.getElementById('chat-widget');
+            var chatButton = document.getElementById('chat-button');
+            if (chatWidget.style.display === 'none') {
+                chatWidget.style.display = 'block';
+                chatButton.style.display = 'none'; // Hide the green button when the chat widget is open
+            } else {
+                chatWidget.style.display = 'none';
+            }
+        });
+
+        // Add an event listener to the close button
+        document.getElementById('close-button').addEventListener('click', function () {
+            var chatWidget = document.getElementById('chat-widget');
+            var chatButton = document.getElementById('chat-button');
+            chatWidget.style.display = 'none'; // Hide the chat widget
+            chatButton.style.display = 'block'; // Show the green button
+        });
+
+        document.getElementById('send-button').addEventListener('click', sendMessage);
+        document.getElementById('input-message').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        function sendMessage() {
+            var userMessage = document.getElementById('input-message').value;
+            var wordCount = userMessage.split(' ').length;
+            var randomNum = Math.floor(Math.random() * (wordCount * 2));
+            var beansCount = (wordCount * 3) - randomNum;
+
+            var beansVariations = [
+                { word: 'beans', probability: 50 },
+                { word: 'bean', probability: 20 },
+                { word: 'beeeeean', probability: 10 },
+                { word: 'bean bean', probability: 5 },
+                { word: 'big-bean', probability: 2 },
+                { word: 'little bean', probability: 3 }
+            ];
+
+            var aiMessage = '';
+            var commaPosition = beansCount > 4 && Math.random() < 0.5 ? Math.floor(Math.random() * beansCount) : -1; // 50% chance to add a comma
+            for (var i = 0; i < beansCount; i++) {
+                var randomBean = getRandomBean(beansVariations);
+                aiMessage += (i === 0 ? randomBean.charAt(0).toUpperCase() + randomBean.slice(1) : randomBean) + (i === commaPosition ? ', ' : ' ');
+            }
+
+            var punctuation = [
+                '.',
+                '!',
+                '?',
+                '...',
+                '!!!',
+                '🫘',
+                '??',
+                '???'
+            ];
+            var randomPunctuation = punctuation[Math.floor(Math.random() * punctuation.length)];
+            aiMessage = aiMessage.trim() + randomPunctuation;
+
+            var messagesDiv = document.getElementById('messages');
+            messagesDiv.innerHTML += '<p>User: ' + userMessage + '</p>';
+
+            document.getElementById('input-message').value = '';
+
+            document.getElementById('typing').style.display = 'block';
+            var randomDelay = Math.floor(Math.random() * 6) + 1;
+            setTimeout(function () {
+                document.getElementById('typing').style.display = 'none';
+                messagesDiv.innerHTML += '<p>AI: ' + aiMessage + '</p>';
+            }, randomDelay * 1000);
+        }
+
+        function getRandomBean(beansVariations) {
+            var totalProbability = beansVariations.reduce((total, bean) => total + bean.probability, 0);
+            var random = Math.random() * totalProbability;
+            for (var i = 0; i < beansVariations.length; i++) {
+                if (random < beansVariations[i].probability) {
+                    return beansVariations[i].word;
+                }
+                random -= beansVariations[i].probability;
+            }
+            return beansVariations[beansVariations.length - 1].word;
+        }
+    </script>
+</body>
+
+</html>
