@@ -1,34 +1,28 @@
 function addToCart(itemName, itemPrice, itemImage, inputId) {
   const quantityInput = document.getElementById(inputId);
   const itemQuantity = parseInt(quantityInput.value);
-  console.log(itemQuantity);
 
   if (itemQuantity <= 0) {
     return;
   }
 
   let cartItems = localStorage.getItem("cartItems");
-  console.log(cartItems);
   cartItems = cartItems ? JSON.parse(cartItems) : [];
   const existingItem = cartItems.find((item) => item.name === itemName);
-  console.log(existingItem);
 
   if (existingItem) {
     existingItem.quantity += itemQuantity;
-    console.log(existingItem.quantity);
   } else {
-    cartItems.push = ({
+    cartItems.push({
       name: itemName,
       price: itemPrice,
       image: itemImage,
       quantity: itemQuantity,
     });
 
-    console.log(`cartItems according to pushed array: ${cartItems}`);
   }
   localStorage.setItem("cartItems", JSON.stringify(cartItems));
-  console.log(`cart Items in ls: ${localStorage.getItem("cartItems")}`);
-
+  
   showNotification(
     `${itemQuantity} ${itemName}${itemQuantity > 1 ? "s" : ""} Added to Cart!`,
   );
