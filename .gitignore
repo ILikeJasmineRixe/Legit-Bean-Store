@@ -1,7 +1,6 @@
-Ads.txt
-/secrets/
+
+secrets
 assets/secrets/
-assets.zip
-teehee.mp4
+extra-gitignore
 assets/images/sggsy.js
-theOne.zipdb.resolved.json
+db.resolved.json
