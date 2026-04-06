@@ -17,12 +17,12 @@ function addToCart(itemName, itemPrice, itemImage, inputId) {
     existingItem.quantity += itemQuantity;
     console.log(existingItem.quantity);
   } else {
-    cartItems.push = {
+    cartItems.push = ({
       name: itemName,
       price: itemPrice,
       image: itemImage,
       quantity: itemQuantity,
-    };
+    });
 
     console.log(`cartItems according to pushed array: ${cartItems}`);
   }
