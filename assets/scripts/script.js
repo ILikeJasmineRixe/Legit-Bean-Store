@@ -71,9 +71,8 @@ function renderCartItems() {
   let totalPrice = 0;
 
   for (let i = 0; i < cartItems.length; i++) {
-    const { name, price, image } = cartItems[i];
-    console.log(cartItems[i]);
-    totalPrice += price;
+    const { name, price, image, quantity } = cartItems[i];
+    totalPrice += price * quantity;
 
     const itemElement = document.createElement("div");
     itemElement.classList.add("cart-item");
@@ -89,13 +88,17 @@ function renderCartItems() {
     itemName.textContent = name;
 
     const itemPrice = document.createElement("p");
-    itemPrice.textContent = `$${price.toFixed(2)}`;
+    itemPrice.textContent = `$${(price * quantity).toFixed(2)}`;
+
+    const itemQuantity = document.createElement("p");
+    itemQuantity.textContent = `${quantity}x`;
 
     const removeButton = document.createElement("button");
     removeButton.textContent = "Remove";
     removeButton.onclick = () => removeFromCart(i);
 
     itemDetails.appendChild(itemName);
+    itemDetails.appendChild(itemQuantity);
     itemDetails.appendChild(itemPrice);
 
     itemElement.appendChild(itemImageElement);
