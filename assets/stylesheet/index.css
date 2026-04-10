@@ -436,3 +436,21 @@ section > img {
   #channelAnchor:hover {
     text-decoration: underline;
   }
+
+  #instagramAnchor {
+    color: #ffc75f;
+    text-decoration: none;
+  }
+
+  #instagramAnchor:hover {
+    text-decoration: underline;
+  }
+
+  #discordAnchor {
+    color: #21357d;
+    text-decoration: none;
+  }
+
+  #discordAnchor:hover {
+    text-decoration: underline;
+  }
